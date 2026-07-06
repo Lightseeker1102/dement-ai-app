@@ -1,0 +1,22 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="40" fill="#f1f5f9" />
+  <g stroke="#718096" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left Lobe Outer Boundary and Gyri squiggles -->
+    <path d="M 90,45 C 70,45 50,50 45,70 C 40,90 45,100 55,110 C 65,120 80,120 90,115" />
+    <path d="M 45,70 C 55,75 65,70 70,80 C 75,90 65,100 55,110" />
+    <path d="M 60,60 C 65,65 75,60 80,70" />
+    <path d="M 90,45 C 90,65 85,75 75,80" />
+    <path d="M 90,95 C 80,95 75,105 75,110" />
+    
+    <!-- Right Lobe Outer Boundary and Gyri squiggles -->
+    <path d="M 90,45 C 110,45 130,50 135,70 C 140,90 135,100 125,110 C 115,120 100,120 90,115" />
+    <path d="M 135,70 C 125,75 115,70 110,80 C 105,90 115,100 125,110" />
+    <path d="M 120,60 C 115,65 105,60 100,70" />
+    <path d="M 90,45 C 90,65 95,75 105,80" />
+    <path d="M 90,95 C 100,95 105,105 105,110" />
+    
+    <!-- Cerebellum/Stem -->
+    <path d="M 85,115 L 85,140 C 85,145 95,145 95,140 L 95,115" />
+    <path d="M 75,125 C 80,130 90,130 95,128" />
+  </g>
+</svg>
