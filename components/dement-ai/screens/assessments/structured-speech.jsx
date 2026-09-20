@@ -1,5 +1,5 @@
 'use client';
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState } from 'react';
 import { useApp } from '../../context';
 import { RecordingView } from './recording';
@@ -18,8 +18,8 @@ export default function StructuredSpeechScreen() {
     const [started, setStarted] = useState(false);
     const [topic] = useState(getRandomTopic);
     if (started) {
-        return (_jsx(RecordingView, { durationSeconds: 60, prompt: topic, onComplete: (score, duration) => {
-                completeAssessment(score, duration);
+        return (_jsx(RecordingView, { durationSeconds: 60, assessmentType: "structured-speech", prompt: topic, onComplete: (score, duration, transcript) => {
+                completeAssessment(score, duration, transcript);
                 showToast('Assessment saved successfully!', 'success');
             }, onCancel: () => {
                 cancelAssessmentFlow();

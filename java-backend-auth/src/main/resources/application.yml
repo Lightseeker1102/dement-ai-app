@@ -1,0 +1,25 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /dementai-auth-api
+
+spring:
+  application:
+    name: dementai-auth-api
+  datasource:
+    url: jdbc:mysql://localhost:3306/dementai_auth_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Nikhil!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+jwt:
+  secret: DementAI_SuperSecret_JWT_Key_2026_Microservices_Auth_Token_12345
+  expiration-ms: 86400000

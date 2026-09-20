@@ -1,5 +1,5 @@
 'use client';
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useState } from 'react';
 import { useApp } from '../../context';
 import { RecordingView } from './recording';
@@ -7,8 +7,8 @@ export default function AnimalNamingScreen() {
     const { navigate, completeAssessment, showToast, cancelAssessmentFlow } = useApp();
     const [started, setStarted] = useState(false);
     if (started) {
-        return (_jsx(RecordingView, { durationSeconds: 60, onComplete: (score, duration) => {
-                completeAssessment(score, duration);
+        return (_jsx(RecordingView, { durationSeconds: 60, onComplete: (score, duration, transcript) => {
+                completeAssessment(score, duration, transcript);
                 showToast('Assessment saved successfully!', 'success');
             }, onCancel: () => {
                 cancelAssessmentFlow();

@@ -1,5 +1,5 @@
 'use client';
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useEffect } from 'react';
 import { useApp, getRiskColor, getAssessmentLabel } from '../../context';
 import { getMockTranscript } from '@/lib/mock-transcripts';
@@ -11,7 +11,7 @@ export default function AssessmentCompleteScreen() {
     const handleFinish = () => {
         cancelAssessmentFlow();
         navigate('user-dashboard');
-        showToast('Three-step assessment sequence completed.', 'success');
+        showToast('Full assessment sequence completed successfully.', 'success');
     };
 
     const summary = assessmentCompletionSummary;
@@ -19,8 +19,8 @@ export default function AssessmentCompleteScreen() {
     const transcript = assessment ? getMockTranscript(assessment.type, assessment.score) : null;
 
     const stepLabel = summary
-        ? `${summary.stepIndex} / ${summary.totalSteps}`
-        : '3 / 3';
+        ? `${summary.totalSteps} / ${summary.totalSteps}`
+        : '4 / 4';
 
     return (
         <div className="min-h-screen flex items-center justify-center px-4 py-10 assessment-complete-rise bg-muted/30">
@@ -31,9 +31,9 @@ export default function AssessmentCompleteScreen() {
                     </svg>
                 </div>
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-muted-foreground">Assessment flow complete</p>
-                <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">You finished all three tests</h1>
+                <h1 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">You finished all assessment tests</h1>
                 <p className="mx-auto mt-3 max-w-lg text-base leading-relaxed text-muted-foreground">
-                    Your results have been processed by DementAI's local speech biomarker models.
+                    Your results have been processed by DementAI's local speech biomarker models and stored in the database.
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -80,7 +80,7 @@ export default function AssessmentCompleteScreen() {
                                 {(() => {
                                     const words = transcript.text.split(' ');
                                     return words.map((word, idx) => {
-                                        const cleanWord = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+                                        const cleanWord = word.replace(/[^\w]/g, "");
                                         const isHighlighted = transcript.highlights.some(h => h.toLowerCase() === cleanWord.toLowerCase());
                                         return (
                                             <span key={idx} className={isHighlighted ? "font-bold text-[#2c7a7b] not-italic bg-teal-50 px-0.5 rounded" : ""}>

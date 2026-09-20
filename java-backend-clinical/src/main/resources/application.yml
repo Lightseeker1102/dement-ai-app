@@ -1,0 +1,29 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /dementai-clinical-api
+
+spring:
+  application:
+    name: dementai-clinical-api
+  datasource:
+    url: jdbc:mysql://localhost:3306/dementai_auth_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Nikhil!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+ml:
+  service:
+    url: http://localhost:8000
+
+jwt:
+  secret: DementAI_SuperSecret_JWT_Key_2026_Microservices_Auth_Token_12345
+  expiration-ms: 86400000

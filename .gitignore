@@ -13,3 +13,29 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+
+# Java / Maven
+**/target/
+*.class
+*.jar
+*.war
+.settings/
+.project
+.classpath
+
+# Python
+**/__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Office temporary lock files
+~$*
+*.tmp
+
+# Scratch / extraction dumps
+placeholders*.txt
+*_dump.txt
+srs_full_text.txt

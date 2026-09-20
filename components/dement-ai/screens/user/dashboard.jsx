@@ -1,5 +1,5 @@
 'use client';
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useApp, getRiskColor } from '../../context';
 import RiskBadge from '../../components/risk-badge';
 const MOTIVATIONAL_QUOTES = [
